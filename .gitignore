@@ -1,0 +1,13 @@
+convertBinary.m
+analyzeBinFiles.m
+.asv
+.float32
+.float32.real
+.float32.imag
+*.tar
+*.xslt
+*.xml
+*.asv
+data/
+figs/
+

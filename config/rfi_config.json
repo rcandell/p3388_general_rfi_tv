@@ -1,0 +1,9 @@
+{
+    "SampleRate_Hz": [1000],
+	"Duration_s": [10],
+	"PathToOutputFile": "./test.csv",
+    "PathToGEProbsBB": "./config/ge_probs_bb_rfi.json",
+	"PathToGEAmpDistrBB": "./config/ge_amps_bb_rfi.csv",
+	"PathToGEProbsNB": "./config/ge_probs_nb_rfi.csv",
+	"PathToGEAmpDistrNB": "./config/ge_amps_nb_rfi.csv"
+}
