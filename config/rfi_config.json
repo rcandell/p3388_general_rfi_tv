@@ -1,9 +1,117 @@
 {
-    "SampleRate_Hz": [1000],
-	"Duration_s": [10],
+    "OutputSampleRate_Hz": 1000,
+	"OutputDuration_s": [11],
+	"OutputBandwidth_Hz": 100e6,
+	"NFreqBins": 1024,
 	"PathToOutputFile": "./test.csv",
     "PathToGEProbsBB": "./config/ge_probs_bb_rfi.json",
 	"PathToGEAmpDistrBB": "./config/ge_amps_bb_rfi.csv",
 	"PathToGEProbsNB": "./config/ge_probs_nb_rfi.csv",
-	"PathToGEAmpDistrNB": "./config/ge_amps_nb_rfi.csv"
+	"PathToGEAmpDistrNB": "./config/ge_amps_nb_rfi.csv",
+    "Reactors": [
+        {
+            "Name":"Broadband",
+            "startbin":1,
+            "endbin":1024,
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":101,
+            "endbin":104,            
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":-20,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":105,
+            "endbin":107,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":121,
+            "endbin":127,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":614,
+            "endbin":660,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":680,
+            "endbin":700,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":801,
+            "endbin":815,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        },
+        {
+            "Name":"NBx",
+            "startbin":835,
+            "endbin":839,        
+            "ge_probs":[0.999, 0.001, 0.001, 0.999],
+            "pwr_distr": {
+                "type":"normal",
+                "params": {
+                    "mean":0,
+                    "std":1.2
+                }
+            }
+        }             
+    ]
 }

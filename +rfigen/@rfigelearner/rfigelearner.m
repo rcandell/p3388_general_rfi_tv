@@ -1,5 +1,5 @@
-classdef rfinb
-    %NARROWBANDRFI Summary of this class goes here
+classdef rfigelearner < handle
+    %RFIGELEARNER Summary of this class goes here
     %   Detailed explanation goes here
     
     properties
@@ -7,8 +7,8 @@ classdef rfinb
     end
     
     methods
-        function obj = rfinb(inputArg1,inputArg2)
-            %NARROWBANDRFI Construct an instance of this class
+        function obj = rfigelearner(inputArg1,inputArg2)
+            %RFIGELEARNER Construct an instance of this class
             %   Detailed explanation goes here
             obj.Property1 = inputArg1 + inputArg2;
         end

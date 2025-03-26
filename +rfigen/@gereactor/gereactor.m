@@ -1,4 +1,7 @@
-classdef gereactor
+classdef gereactor < handle
+    % Author: Rick Candell
+    % 
+    % (c) Copyright Rick Candell All Rights Reserved
     
     properties
         state = 0;

@@ -10,4 +10,7 @@ analyzeBinFiles.m
 *.asv
 data/
 figs/
+*.csv
 
+
+emprand*
