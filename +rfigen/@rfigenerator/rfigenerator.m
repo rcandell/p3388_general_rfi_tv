@@ -11,7 +11,7 @@ classdef rfigenerator < handle
         rfi_props = [];  % will be object of rfiprops
 
         % state reactors
-        rfi_state_reactors = []; % an array of reactors
+        rfi_state_reactors = {}; % a cell array of reactors
 
         % output file
         fout = [];
@@ -30,9 +30,26 @@ classdef rfigenerator < handle
             % create array of state reactors
             Nreactors = length(obj.rfi_props.config.Reactors);
             for ii = 1:Nreactors
-                reactor_props = obj.rfi_props.config.Reactors(ii);
+                if isscalar(obj.rfi_props.config.Reactors)
+                    reactor_props = obj.rfi_props.config.Reactors;
+                else
+                    if iscell(obj.rfi_props.config.Reactors(ii))
+                        reactor_props = cell2mat(obj.rfi_props.config.Reactors(ii));
+                    else
+                        reactor_props = obj.rfi_props.config.Reactors(ii);
+                    end
+                end
                 newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
-                obj.rfi_state_reactors = [obj.rfi_state_reactors, newReactor];
+                % if isfield(reactor_props,'type')
+                %     if reactor_props.type == "vbw"
+                %         newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
+                %     else
+                %         error("unknown reactor type")
+                %     end
+                % else % assume fixed bandwidth for now
+                %     newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
+                % end
+                obj.rfi_state_reactors{end+1} = newReactor;
             end
 
         end
@@ -54,12 +71,14 @@ classdef rfigenerator < handle
 
                 % set up interference vector
                 J = zeros(1,L);
-                
+
                 % add possible J for each reactor
                 for ii = 1:N
-                    r = obj.rfi_state_reactors(ii);
+                    r = obj.rfi_state_reactors{ii};
                     J = r.add(J);
                 end
+
+                stem(J)
 
                 % write time step to csv output file
                 writematrix(J,obj.rfi_props.config.PathToOutputFile,"WriteMode","append");
