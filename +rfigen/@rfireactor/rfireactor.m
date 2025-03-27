@@ -44,8 +44,8 @@ classdef rfireactor < rfigen.gereactor
                 startbin = 0;
                 endbin = 0;
                 if obj.bw_dist.type == "normal"
-                    u = obj.bw_dist.params.mean;
-                    s = obj.bw_dist.params.std;
+                    u = obj.bw_dist.mean;
+                    s = obj.bw_dist.std;
                     L = 2*ceil((u+s*abs(randn()))/2)+1;  % always odd
                     offset = (L-1)/2;
                     startbin = max(obj.centerbin - offset, 1);
@@ -56,8 +56,8 @@ classdef rfireactor < rfigen.gereactor
 
                 % amplitude level
                 if obj.power_dist.type == "normal"
-                    u = obj.power_dist.params.mean;
-                    s = obj.power_dist.params.std;
+                    u = obj.power_dist.mean;
+                    s = obj.power_dist.std;
                     p = u+s*randn();
                     plin = power(10,p/10);
                     a = sqrt(plin);

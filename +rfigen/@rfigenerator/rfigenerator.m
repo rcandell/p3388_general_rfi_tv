@@ -78,7 +78,7 @@ classdef rfigenerator < handle
                     J = r.add(J);
                 end
 
-                stem(J)
+                %stem(J)
 
                 % write time step to csv output file
                 writematrix(J,obj.rfi_props.config.PathToOutputFile,"WriteMode","append");

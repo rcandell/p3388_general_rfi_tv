@@ -1,9 +1,9 @@
 {
     "OutputSampleRate_Hz": 1000,
-	"OutputDuration_s": [11],
+	"OutputDuration_s": [4.0],
 	"OutputBandwidth_Hz": 100e6,
 	"NFreqBins": 1024,
-	"PathToOutputFile": "./test_vbw.csv",
+	"PathToOutputFile": "./test.csv",
     "PathToGEProbsBB": "./config/ge_probs_bb_rfi.json",
 	"PathToGEAmpDistrBB": "./config/ge_amps_bb_rfi.csv",
 	"PathToGEProbsNB": "./config/ge_probs_nb_rfi.csv",
@@ -38,7 +38,7 @@
                 "type":"normal",
                 "params": {
                     "mean":100,
-                    "std": 0
+                    "std": 25
                 }				
 			},
             "pwr_distr": {
@@ -53,7 +53,7 @@
             "Name":"Variable3",
 			"type":"vbw",
             "centerbin":450,
-			"ge_probs":[0.0, 1.0, 0.0, 1.0],
+			"ge_probs":[0.75, 0.25, 0.25, 0.75],
 			"bw_distr": {
                 "type":"normal",
                 "params": {
@@ -73,7 +73,7 @@
             "Name":"Variable4",
 			"type":"vbw",
             "centerbin":25,
-			"ge_probs":[0.0, 1.0, 0.0, 1.0],
+			"ge_probs":[0.75, 0.25, 0.25, 0.75],
 			"bw_distr": {
                 "type":"normal",
                 "params": {

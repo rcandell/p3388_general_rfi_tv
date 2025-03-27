@@ -11,6 +11,6 @@ analyzeBinFiles.m
 data/
 figs/
 *.csv
-
+~$*.xlsx
 
 emprand*
