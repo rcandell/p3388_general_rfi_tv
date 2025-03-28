@@ -18,10 +18,6 @@ classdef rfigenerator < handle
 
     end
 
-    properties (Constant)
-        NF = power(10,-100/10);
-    end
-
     properties (Access = private)
         p_fft = [];
     end
@@ -61,11 +57,13 @@ classdef rfigenerator < handle
             dur = obj.rfi_props.output_duration_s;
             N = length(obj.rfi_state_reactors);
             L = obj.rfi_props.rf_nfreqbins;
+            NF = obj.rfi_props.rel_nf_power_dB;  % relative power in dB
+            nfv = power(10,NF/20);  % rel power converted to amplitude
             
             while t < dur
 
                 % set up interference vector
-                J = obj.NF*ones(1,L);
+                J = nfv*ones(1,L);
 
                 % add possible J for each reactor
                 for ii = 1:N

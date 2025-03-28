@@ -4,7 +4,7 @@ clear all;
 fclose all;
 close all;
 
-delete("./ouptputs/test.csv");
+delete("./outputs/test.csv");
 
 rfi_config_path = './config/reactors_autogen.json';
 rfi=rfigen.rfigenerator(rfi_config_path);

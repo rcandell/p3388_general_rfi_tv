@@ -23,6 +23,9 @@ classdef rfiprops < handle
         % freq bin information
         rf_nfreqbins = [];
 
+        % relative noise floor power dB
+        rel_nf_power_dB = [];
+
         % time space
         output_duration_s = [];
         output_samplerate_hz = [];
@@ -50,16 +53,7 @@ classdef rfiprops < handle
             obj.rf_nfreqbins = obj.config.NFreqBins;
             obj.output_duration_s = obj.config.OutputDuration_s;
             obj.output_samplerate_hz = obj.config.OutputSampleRate_Hz;
-
-            % % load the broadband RFI probabilities
-            % filename = obj.config.PathToGEProbsBB;
-            % fileID = fopen(filename, 'r');
-            % json_data = fread(fileID, '*char')';
-            % fclose(fileID);
-            % bbinfo = jsondecode(json_data);  
-
-            % save to structured code
-            % obj.ge_probs_bb_rfi = reshape(bbinfo.rfi_bb_probs, [2,2])';          
+            obj.rel_nf_power_dB = obj.config.NoiseFloorPower_dB;
 
         end
         
