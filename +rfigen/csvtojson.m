@@ -96,6 +96,15 @@ function s = add_reactor(s, r)
     pwr_distr_std  = r.pwr_distr_std;
     s = add_double(s, "std", pwr_distr_std);
     s = end_section(s);
+    s = add_comma_newline(s);
+
+    s = begin_section(s, "pwr_shaping");
+    pwr_shaping_on = r.pwr_shaping;
+    s = add_double(s, "enabled", pwr_shaping_on);
+    s = add_comma_newline(s);
+    pwr_shaping_std = r.pwr_shaping_std;
+    s = add_double(s, "std", pwr_shaping_std);
+    s = end_section(s);    
 
     s = s + "}";
 

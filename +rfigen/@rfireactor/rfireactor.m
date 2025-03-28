@@ -7,7 +7,8 @@ classdef rfireactor < rfigen.gereactor
         centerbin = [];
         bw_dist = [];
         power_dist = [];
-        nbins = [];         % num bins total
+        power_shaping = [];
+        nbins = []; % num bins total
 
         J = [];
     end
@@ -21,6 +22,7 @@ classdef rfireactor < rfigen.gereactor
             obj.centerbin = reactor_props.centerbin;
             obj.bw_dist = reactor_props.bw_distr;
             obj.power_dist = reactor_props.pwr_distr;
+            obj.power_shaping = reactor_props.pwr_shaping;
             obj.nbins = nbins;
             obj.J = zeros(1,nbins);
         end
@@ -40,9 +42,9 @@ classdef rfireactor < rfigen.gereactor
             if obj.state == 1
 
                 % number of bins for interference
-                r = 0; 
-                startbin = 0;
-                endbin = 0;
+                % r = 0; 
+                % startbin = 0;
+                % endbin = 0;
                 if obj.bw_dist.type == "normal"
                     u = obj.bw_dist.mean;
                     s = obj.bw_dist.std;
@@ -64,6 +66,16 @@ classdef rfireactor < rfigen.gereactor
                     a = sqrt(plin);
                     Lr = length(I);
                     r = a*ones(1,Lr);
+
+                    % apply shaping
+                    if obj.power_shaping.enabled
+                        ps_x = 1:obj.nbins;
+                        ps_pdf = pdf('normal',ps_x,obj.centerbin,obj.power_shaping.std);
+                        ps_pdf = ps_pdf(I)/max(ps_pdf(I));
+                        r = r.*ps_pdf;
+                    end
+
+                    % add reactor component
                     obj.J(I) = r;
                 else
                     error("unknown pwr distribution type %s", obj.power_dist.type);
