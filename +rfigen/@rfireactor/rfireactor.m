@@ -48,8 +48,9 @@ classdef rfireactor < rfigen.gereactor
                     s = obj.bw_dist.std;
                     L = 2*ceil((u+s*abs(randn()))/2)+1;  % always odd
                     offset = (L-1)/2;
-                    startbin = max(obj.centerbin - offset, 1);
-                    endbin = min(obj.centerbin + offset, obj.nbins);
+                    startbin = obj.centerbin - offset;
+                    endbin = obj.centerbin + offset;
+                    I = obj.calculate_bin_range(startbin, endbin);
                 else
                     error("unknown bw distribution type %s", obj.bw_dist.type);
                 end
@@ -61,13 +62,19 @@ classdef rfireactor < rfigen.gereactor
                     p = u+s*randn();
                     plin = power(10,p/10);
                     a = sqrt(plin);
-                    % L = endbin - startbin + 1;
-                    r = a*ones(1,L);
-                    obj.J(startbin:endbin) = r;
+                    Lr = length(I);
+                    r = a*ones(1,Lr);
+                    obj.J(I) = r;
                 else
                     error("unknown pwr distribution type %s", obj.power_dist.type);
                 end
             end
+        end
+
+        function I = calculate_bin_range(obj, startbin, endbin)
+            Ilow = max([startbin 1]);
+            Ihigh = min([endbin obj.nbins]);
+            I = Ilow:Ihigh;
         end
 
     end

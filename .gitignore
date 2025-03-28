@@ -1,3 +1,4 @@
+./outputs
 convertBinary.m
 analyzeBinFiles.m
 .asv

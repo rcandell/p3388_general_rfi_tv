@@ -18,6 +18,10 @@ classdef rfigenerator < handle
 
     end
 
+    properties (Constant)
+        NF = power(10,-100/10);
+    end
+
     properties (Access = private)
         p_fft = [];
     end
@@ -40,15 +44,6 @@ classdef rfigenerator < handle
                     end
                 end
                 newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
-                % if isfield(reactor_props,'type')
-                %     if reactor_props.type == "vbw"
-                %         newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
-                %     else
-                %         error("unknown reactor type")
-                %     end
-                % else % assume fixed bandwidth for now
-                %     newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
-                % end
                 obj.rfi_state_reactors{end+1} = newReactor;
             end
 
@@ -70,7 +65,7 @@ classdef rfigenerator < handle
             while t < dur
 
                 % set up interference vector
-                J = zeros(1,L);
+                J = obj.NF*ones(1,L);
 
                 % add possible J for each reactor
                 for ii = 1:N
@@ -78,7 +73,8 @@ classdef rfigenerator < handle
                     J = r.add(J);
                 end
 
-                %stem(J)
+                % interference is linear convert to dB
+                J = 20*log10(J);
 
                 % write time step to csv output file
                 writematrix(J,obj.rfi_props.config.PathToOutputFile,"WriteMode","append");
