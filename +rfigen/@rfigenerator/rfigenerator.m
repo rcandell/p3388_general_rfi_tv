@@ -98,13 +98,17 @@ classdef rfigenerator < handle
                     Y2 = [Y1(1) Y1(2:end)/2 fliplr(conj(Y1(2:end)))/2];
         
                     % conver to time domain
+                    NptsFFT = obj.rfi_props.rf_nfreqbins;
                     NptsIFFT = obj.rfi_props.config.NPtsIFFT;
-                    if NptsIFFT < obj.rfi_props.rf_nfreqbins
-                        error("Number of points in the IFFT are less" + ...
-                            "than the number of FFT points")
+                    if NptsIFFT == -1
+                        NptsIFFT = 2*NptsFFT;  % signal real, make 2-sided
+                    end
+                    if NptsIFFT < NptsFFT
+                        error("Number of points in the IFFT are less than the number of FFT points")
                     end
                     X = ifft(Y2, NptsIFFT, 'symmetric');
-
+                    X = ifftshift(X);
+                    
                     % write the time domain signal to output file
                     % here it will be in text format
         
@@ -113,7 +117,10 @@ classdef rfigenerator < handle
                     Ts_spg = 1/obj.rfi_props.output_samplerate_hz;
                     Ts_td = Ts_spg/L;
                     t = (0:length(X)-1)*Ts_td;
-                    plot(t,X);
+
+                    subplot(3,1,1), plot(X)
+                    subplot(3,1,2), plot(abs(fft(X)))
+                    subplot(3,1,3), plot(Y2)
                     
                 % last thing, get next line
                 tline = fgetl(fid_in);

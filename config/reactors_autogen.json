@@ -5,7 +5,7 @@
   "NFreqBins": 1024,
   "NoiseFloorPower_dB": -100,
   "PathToOutputSpectrogram": "./outputs/test.csv",
-  "NPtsIFFT": 4096,
+  "NPtsIFFT": -1,
   "PathToOutputTimeSignal": "./outputs/timesignal.csv",
   "Reactors": [
     {
