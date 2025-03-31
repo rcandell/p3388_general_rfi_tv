@@ -3,8 +3,10 @@
   "OutputDuration_s": 1,
   "OutputBandwidth_Hz": 1.0E+8,
   "NFreqBins": 1024,
-  "PathToOutputFile": "./outputs/test.csv",
-  "NoiseFloorPower_dB": -60,
+  "NoiseFloorPower_dB": -100,
+  "PathToOutputSpectrogram": "./outputs/test.csv",
+  "NPtsIFFT": 4096,
+  "PathToOutputTimeSignal": "./outputs/timesignal.csv",
   "Reactors": [
     {
       "Name": "VSD",

@@ -42,9 +42,6 @@ classdef rfireactor < rfigen.gereactor
             if obj.state == 1
 
                 % number of bins for interference
-                % r = 0; 
-                % startbin = 0;
-                % endbin = 0;
                 if obj.bw_dist.type == "normal"
                     u = obj.bw_dist.mean;
                     s = obj.bw_dist.std;
@@ -64,8 +61,8 @@ classdef rfireactor < rfigen.gereactor
                     u = obj.power_dist.mean;
                     s = obj.power_dist.std;
                     p = u+s*randn();
-                    plin = power(10,p/10);
-                    a = sqrt(plin);
+                    plin = power(10,p/10);  % get linear pwr
+                    a = sqrt(plin);  % convert to volts
                     Lr = length(I);
                     r = a*ones(1,Lr);
 

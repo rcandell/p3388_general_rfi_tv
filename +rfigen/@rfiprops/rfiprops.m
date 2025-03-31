@@ -29,7 +29,7 @@ classdef rfiprops < handle
         % time space
         output_duration_s = [];
         output_samplerate_hz = [];
-      
+        
     end
     
     methods

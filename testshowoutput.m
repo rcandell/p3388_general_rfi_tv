@@ -14,6 +14,7 @@ config = jsondecode(json_data);
 X = 1:config.NFreqBins;
 Y = 0:1/config.OutputSampleRate_Hz:config.OutputDuration_s;
 
+% show the output test vector as power vs time and frequency
 outputfile = "./outputs/test.csv";
 J=readmatrix(outputfile);
 figure, imagesc(X,Y,J);
