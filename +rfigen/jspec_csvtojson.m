@@ -1,4 +1,4 @@
-function csvtojson(conf_file, csv_file, output_file)
+function jspec_csvtojson(conf_file, csv_file, output_file)
 % produces the Reactors part of the json file
 %   Detailed explanation goes here
 % Author: Rick Candell

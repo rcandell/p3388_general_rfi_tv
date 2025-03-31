@@ -53,6 +53,8 @@ classdef rfireactor < rfigen.gereactor
                     startbin = obj.centerbin - offset;
                     endbin = obj.centerbin + offset;
                     I = obj.calculate_bin_range(startbin, endbin);
+                elseif obj.bw_dist.type == "flat"
+                    I = 1:obj.nbins;
                 else
                     error("unknown bw distribution type %s", obj.bw_dist.type);
                 end
