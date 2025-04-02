@@ -11,15 +11,15 @@ fclose(fileID);
 config = jsondecode(json_data);  
 
 % compute the X and Y 
-X = 1:config.NFreqBins;
-Y = 0:1/config.OutputSampleRate_Hz:config.OutputDuration_s;
+X = 1:config.spectrogram.NFreqBins;
+Y = 0:1/config.spectrogram.SampleRate_Hz:config.spectrogram.Duration_s;
 
 % show the output test vector as power vs time and frequency
 outputfile = "./outputs/test.csv";
 J=readmatrix(outputfile);
 figure, imagesc(X,Y,J);
-xlabel('time (s)')
-ylabel('freq bin')
+ylabel('time (s)')
+xlabel('freq bin')
 title('Sample test vector of powers vs time and frequecy')
 colorbar
 set(gca,'YDir','normal')

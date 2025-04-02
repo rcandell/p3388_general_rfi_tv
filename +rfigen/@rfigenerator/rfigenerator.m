@@ -50,7 +50,7 @@ classdef rfigenerator < handle
             disp("Duration (sec): " + obj.rfi_props.output_duration_s);
             disp("Number of frequency bins: " + obj.rfi_props.rf_nfreqbins);
             disp("Number of reactors: " + length(obj.rfi_state_reactors));
-            disp("Output file path: " + obj.rfi_props.config.PathToOutputSpectrogram);
+            disp("Output file path: " + obj.rfi_props.config.spectrogram.PathToOutputSpectrogram);
 
             t = 0;
             ts = 1/obj.rfi_props.output_samplerate_hz;
@@ -75,56 +75,46 @@ classdef rfigenerator < handle
                 J = 20*log10(J);
 
                 % write time step to csv output file
-                writematrix(J,obj.rfi_props.config.PathToOutputSpectrogram,"WriteMode","append");
+                writematrix(J,obj.rfi_props.config.spectrogram.PathToOutputSpectrogram,"WriteMode","append");
                 t = t + ts;
             end
         end
 
         function make_time_signal(obj)
-            ifile_name = obj.rfi_props.config.PathToOutputSpectrogram;
-            ofile_name = obj.rfi_props.config.PathToOutputTimeSignal;
+            ifile_name = obj.rfi_props.config.spectrogram.PathToOutputSpectrogram;
+            ofile_name = obj.rfi_props.config.ifft.PathToOutputTimeSignal;
 
             % open the input file
             fid_in = fopen(ifile_name, "r");
+
+            % open the output file
+            fid_out = fopen(ofile_name,'W');
             
             % loop through each set of lines
             tline = fgetl(fid_in);
+            lineno = 1;
             while ischar(tline)
-                v_dB = str2num(tline);
 
-                    % convert fft to time domain using ifft
-                    Y1 = power(10,v_dB/20);
-                    % convert to 2-sided spectrum
-                    Y2 = [Y1(1) Y1(2:end)/2 fliplr(conj(Y1(2:end)))/2];
-        
-                    % conver to time domain
-                    NptsFFT = obj.rfi_props.rf_nfreqbins;
-                    NptsIFFT = obj.rfi_props.config.NPtsIFFT;
-                    if NptsIFFT == -1
-                        NptsIFFT = 2*NptsFFT;  % signal real, make 2-sided
-                    end
-                    if NptsIFFT < NptsFFT
-                        error("Number of points in the IFFT are less than the number of FFT points")
-                    end
-                    X = ifft(Y2, NptsIFFT, 'symmetric');
-                    X = ifftshift(X);
-                    
-                    % write the time domain signal to output file
-                    % here it will be in text format
-        
-                    % temp plot it out
-                    L = obj.rfi_props.rf_nfreqbins;
-                    Ts_spg = 1/obj.rfi_props.output_samplerate_hz;
-                    Ts_td = Ts_spg/L;
-                    t = (0:length(X)-1)*Ts_td;
+                % convert to array
+                v_dB = str2num(tline); %#ok<ST2NM>
 
-                    subplot(3,1,1), plot(X)
-                    subplot(3,1,2), plot(abs(fft(X)))
-                    subplot(3,1,3), plot(Y2)
+                % construct time chunk object
+                Tchunk = rfigen.rfitimechunk(obj.rfi_props);
+
+                % convert to time series using ifft
+                Tchunk = Tchunk + v_dB;
+
+                % write to the output file
+                X = Tchunk.X(:);
+                fprintf(fid_out,"%0.8f%+0.8fi\n", real(X), imag(X));
                     
                 % last thing, get next line
                 tline = fgetl(fid_in);
+                lineno = lineno + 1;
             end
+
+            fclose(fid_out);
+            fclose(fid_in);
         end
     end
 end

@@ -45,7 +45,11 @@ classdef rfireactor < rfigen.gereactor
                 if obj.bw_dist.type == "normal"
                     u = obj.bw_dist.mean;
                     s = obj.bw_dist.std;
-                    L = 2*ceil((u+s*abs(randn()))/2)+1;  % always odd
+                    if (u<=1) && (s==0)
+                        L = 1;
+                    else
+                        L = 2*ceil((u+s*abs(randn()))/2)+1;  % always odd
+                    end
                     offset = (L-1)/2;
                     startbin = obj.centerbin - offset;
                     endbin = obj.centerbin + offset;

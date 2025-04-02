@@ -50,10 +50,10 @@ classdef rfiprops < handle
             obj.config = jsondecode(json_data);  
 
             % save to structured code
-            obj.rf_nfreqbins = obj.config.NFreqBins;
-            obj.output_duration_s = obj.config.OutputDuration_s;
-            obj.output_samplerate_hz = obj.config.OutputSampleRate_Hz;
-            obj.rel_nf_power_dB = obj.config.NoiseFloorPower_dB;
+            obj.rf_nfreqbins = obj.config.spectrogram.NFreqBins;
+            obj.output_duration_s = obj.config.spectrogram.Duration_s;
+            obj.output_samplerate_hz = obj.config.spectrogram.SampleRate_Hz;
+            obj.rel_nf_power_dB = obj.config.spectrogram.NoiseFloorPower_dB;
 
         end
         
