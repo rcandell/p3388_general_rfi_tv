@@ -13,29 +13,4581 @@
     "NPtsIFFT": 4096,
     "PathToOutputTimeSignal": "./outputs/timesignal.csv"
   },
-  "Reactors": {
-    "Name": "J1",
-    "type": "vbw",
-    "centerbin": 800,
-    "ge_probs": [
-      0,
-      1,
-      0,
-      1
-    ],
-    "bw_distr": {
-      "type": "normal",
-      "mean": 1,
-      "std": 0
+  "Reactors": [
+    {
+      "Name": "VSD",
+      "type": "vbw",
+      "centerbin": 512,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.01,
+        0.99
+      ],
+      "bw_distr": {
+        "type": "flat",
+        "mean": -1,
+        "std": -1
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 2
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
     },
-    "pwr_distr": {
-      "type": "normal",
-      "mean": 0,
-      "std": 0
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 150,
+        "std": 30
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 6
+      },
+      "pwr_shaping": {
+        "enabled": 1,
+        "std": 30
+      }
     },
-    "pwr_shaping": {
-      "enabled": 1,
-      "std": 30
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 230,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 40,
+        "std": 5
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 6
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J2",
+      "type": "vbw",
+      "centerbin": 107,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.8606
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 2.4346
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J3",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.2884
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 1.7797
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J4",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 2.2222
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0.057454
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J5",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 1.4679
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 0.99761
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J6",
+      "type": "vbw",
+      "centerbin": 958,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 1.3013
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 1.5676
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J7",
+      "type": "vbw",
+      "centerbin": 69,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 1.7059
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 1.2726
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J8",
+      "type": "vbw",
+      "centerbin": 967,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 1.8702
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 2.1532
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J9",
+      "type": "vbw",
+      "centerbin": 311,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.34862
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0.50171
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J10",
+      "type": "vbw",
+      "centerbin": 110,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 2.6301
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 1.3612
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J11",
+      "type": "vbw",
+      "centerbin": 136,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 1.3969
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 0.29989
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J12",
+      "type": "vbw",
+      "centerbin": 889,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.0192
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 2.9901
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J13",
+      "type": "vbw",
+      "centerbin": 853,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.62815
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 2.3156
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J14",
+      "type": "vbw",
+      "centerbin": 907,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.4595
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 2.8555
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J15",
+      "type": "vbw",
+      "centerbin": 19,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 0.82438
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 2.7073
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J16",
+      "type": "vbw",
+      "centerbin": 798,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 13,
+        "std": 1.467
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.9865
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J13",
+      "type": "vbw",
+      "centerbin": 190,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 2.9846
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 2.9017
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J14",
+      "type": "vbw",
+      "centerbin": 207,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.2227
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 2.1004
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J15",
+      "type": "vbw",
+      "centerbin": 810,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 2.493
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 1.398
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J16",
+      "type": "vbw",
+      "centerbin": 1008,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 20,
+        "std": 1.4921
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 1.4735
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J17",
+      "type": "vbw",
+      "centerbin": 539,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.42275
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.026
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J18",
+      "type": "vbw",
+      "centerbin": 116,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 2.4335
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 2.2761
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J19",
+      "type": "vbw",
+      "centerbin": 607,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 2.4539
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0.25086
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J20",
+      "type": "vbw",
+      "centerbin": 912,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.0625
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 0.94561
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J21",
+      "type": "vbw",
+      "centerbin": 486,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.64597
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 1.6459
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J22",
+      "type": "vbw",
+      "centerbin": 873,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 0.94549
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 2.7046
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J23",
+      "type": "vbw",
+      "centerbin": 873,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 1.2875
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 0.99741
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J24",
+      "type": "vbw",
+      "centerbin": 789,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.1008
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 0.31449
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J25",
+      "type": "vbw",
+      "centerbin": 479,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 1.2183
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.19812
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J26",
+      "type": "vbw",
+      "centerbin": 534,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 2.2675
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 0.07883
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J27",
+      "type": "vbw",
+      "centerbin": 892,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 2.7717
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 1.7698
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J28",
+      "type": "vbw",
+      "centerbin": 112,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.7391
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 2.2
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J29",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 14,
+        "std": 0.17158
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -1,
+        "std": 2.1715
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J30",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 2.0029
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 2.2102
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J31",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 26,
+        "std": 1.6426
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 0.67456
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J32",
+      "type": "vbw",
+      "centerbin": 291,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 1.0331
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.67508
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J33",
+      "type": "vbw",
+      "centerbin": 352,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 0.16964
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 2.0921
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J34",
+      "type": "vbw",
+      "centerbin": 329,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 13,
+        "std": 0.63299
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.88608
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J35",
+      "type": "vbw",
+      "centerbin": 215,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 1.0698
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0.4131
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J36",
+      "type": "vbw",
+      "centerbin": 58,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 12,
+        "std": 0.36329
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.8783
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J37",
+      "type": "vbw",
+      "centerbin": 209,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 2.037
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.383
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J38",
+      "type": "vbw",
+      "centerbin": 908,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 2.4987
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.1801
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J39",
+      "type": "vbw",
+      "centerbin": 878,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.3961
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 0.17999
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J40",
+      "type": "vbw",
+      "centerbin": 512,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 1.6491
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 1.1618
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J41",
+      "type": "vbw",
+      "centerbin": 284,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 14,
+        "std": 2.1257
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 0.24919
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J42",
+      "type": "vbw",
+      "centerbin": 364,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 2.1133
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.42741
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J43",
+      "type": "vbw",
+      "centerbin": 89,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 1.9326
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 2.27
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J44",
+      "type": "vbw",
+      "centerbin": 757,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 0.44932
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.41976
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J45",
+      "type": "vbw",
+      "centerbin": 562,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 26,
+        "std": 2.8073
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.95524
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J46",
+      "type": "vbw",
+      "centerbin": 884,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 1.5998
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 2.6105
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J47",
+      "type": "vbw",
+      "centerbin": 412,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.84852
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.21821
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J48",
+      "type": "vbw",
+      "centerbin": 750,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.51252
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 0.9659
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J49",
+      "type": "vbw",
+      "centerbin": 158,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 2.5177
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 2.5469
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J50",
+      "type": "vbw",
+      "centerbin": 870,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 0.8098
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.56078
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J51",
+      "type": "vbw",
+      "centerbin": 511,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.0852
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.7163
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J52",
+      "type": "vbw",
+      "centerbin": 463,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0.74156
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.0695
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J53",
+      "type": "vbw",
+      "centerbin": 961,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 23,
+        "std": 2.5668
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 0.77315
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J54",
+      "type": "vbw",
+      "centerbin": 381,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 20,
+        "std": 1.4599
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.66913
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J55",
+      "type": "vbw",
+      "centerbin": 794,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 1.8542
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.85593
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J56",
+      "type": "vbw",
+      "centerbin": 682,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 2.642
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 2.7871
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J57",
+      "type": "vbw",
+      "centerbin": 319,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 2.1513
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.5262
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J58",
+      "type": "vbw",
+      "centerbin": 704,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 0.96719
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 1.3483
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J59",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 0.13609
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 0.22373
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J60",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 0.66034
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 2.2289
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J61",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 1.9245
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 1.5904
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J62",
+      "type": "vbw",
+      "centerbin": 293,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 0.76183
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.67196
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J63",
+      "type": "vbw",
+      "centerbin": 848,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.03
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0.23923
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J64",
+      "type": "vbw",
+      "centerbin": 359,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.122
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.34232
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J65",
+      "type": "vbw",
+      "centerbin": 588,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 1.5809
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.033102
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J66",
+      "type": "vbw",
+      "centerbin": 857,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 0.091922
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.071777
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J67",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 12,
+        "std": 0.29326
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.14305
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J68",
+      "type": "vbw",
+      "centerbin": 944,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.39338
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.2068
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J69",
+      "type": "vbw",
+      "centerbin": 342,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 1.2096
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.61311
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J70",
+      "type": "vbw",
+      "centerbin": 206,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 14,
+        "std": 2.0731
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 1.2204
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J71",
+      "type": "vbw",
+      "centerbin": 498,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 2.7027
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 1.024
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J72",
+      "type": "vbw",
+      "centerbin": 600,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 1.9312
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.1515
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J73",
+      "type": "vbw",
+      "centerbin": 769,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.83981
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 0.1595
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J74",
+      "type": "vbw",
+      "centerbin": 341,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 26,
+        "std": 1.4578
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.36734
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J75",
+      "type": "vbw",
+      "centerbin": 355,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 1.2169
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 2.4289
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J76",
+      "type": "vbw",
+      "centerbin": 597,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.0398
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0.8568
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J77",
+      "type": "vbw",
+      "centerbin": 1011,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.3576
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.3659
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J78",
+      "type": "vbw",
+      "centerbin": 1021,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.6882
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 1.6072
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J79",
+      "type": "vbw",
+      "centerbin": 328,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 1.6963
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.4523
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J80",
+      "type": "vbw",
+      "centerbin": 616,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.318
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 1.6162
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J81",
+      "type": "vbw",
+      "centerbin": 194,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 14,
+        "std": 2.774
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 0.18268
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J82",
+      "type": "vbw",
+      "centerbin": 468,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 0.39597
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 1.0679
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J83",
+      "type": "vbw",
+      "centerbin": 944,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 1.1845
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.29841
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J84",
+      "type": "vbw",
+      "centerbin": 631,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 0.55076
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 0.94475
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J85",
+      "type": "vbw",
+      "centerbin": 254,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 2.1479
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 2.3589
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J86",
+      "type": "vbw",
+      "centerbin": 909,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 26,
+        "std": 0.67944
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.12295
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J27",
+      "type": "vbw",
+      "centerbin": 738,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.7673
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 1.7322
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J28",
+      "type": "vbw",
+      "centerbin": 210,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 1.5805
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 0.30668
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J29",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 1.3868
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 2.9625
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J30",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 13,
+        "std": 1.0124
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 1.1856
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J31",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 2.7283
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.1744
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J32",
+      "type": "vbw",
+      "centerbin": 45,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 1.2046
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 1.9942
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J33",
+      "type": "vbw",
+      "centerbin": 287,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 0.73499
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.7837
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J34",
+      "type": "vbw",
+      "centerbin": 982,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.60534
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 1.2538
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J35",
+      "type": "vbw",
+      "centerbin": 173,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.051608
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 0.17735
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J36",
+      "type": "vbw",
+      "centerbin": 212,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 21,
+        "std": 0.82063
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0.73604
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J37",
+      "type": "vbw",
+      "centerbin": 233,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 2.6989
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 2.5951
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J38",
+      "type": "vbw",
+      "centerbin": 551,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.7967
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0.20544
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J39",
+      "type": "vbw",
+      "centerbin": 980,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 2.8958
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.24356
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J40",
+      "type": "vbw",
+      "centerbin": 647,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 1.8753
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.68786
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J41",
+      "type": "vbw",
+      "centerbin": 490,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.6837
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.7182
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J42",
+      "type": "vbw",
+      "centerbin": 222,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 1.9687
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 1.3504
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J43",
+      "type": "vbw",
+      "centerbin": 665,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.1721
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 1.4657
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J44",
+      "type": "vbw",
+      "centerbin": 678,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 2.8495
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 0.23217
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J45",
+      "type": "vbw",
+      "centerbin": 470,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 2.4007
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 0.97474
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J46",
+      "type": "vbw",
+      "centerbin": 985,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 12,
+        "std": 1.9384
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 2.8063
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J47",
+      "type": "vbw",
+      "centerbin": 975,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 0.34597
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.4519
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J48",
+      "type": "vbw",
+      "centerbin": 645,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 1.7498
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 2.3851
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J49",
+      "type": "vbw",
+      "centerbin": 251,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 1.8844
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 2.5496
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J50",
+      "type": "vbw",
+      "centerbin": 882,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 11,
+        "std": 1.1336
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 2.1967
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J51",
+      "type": "vbw",
+      "centerbin": 359,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 22,
+        "std": 0.32368
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 1.8631
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J52",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 25,
+        "std": 1.5926
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.26503
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J53",
+      "type": "vbw",
+      "centerbin": 360,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 2.2334
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 2.0756
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J54",
+      "type": "vbw",
+      "centerbin": 955,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 1.7922
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 0.58683
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J55",
+      "type": "vbw",
+      "centerbin": 415,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 11,
+        "std": 1.4094
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 1.3577
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J56",
+      "type": "vbw",
+      "centerbin": 86,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 12,
+        "std": 2.8155
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.2403
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J57",
+      "type": "vbw",
+      "centerbin": 324,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 2.5883
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 2.6678
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J58",
+      "type": "vbw",
+      "centerbin": 282,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 1.9315
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.75967
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J59",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.0187
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 0.66813
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J60",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 2.1677
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.2653
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J61",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 0.8828
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 2.1149
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J62",
+      "type": "vbw",
+      "centerbin": 960,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 2.0396
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.42248
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J63",
+      "type": "vbw",
+      "centerbin": 514,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 12,
+        "std": 1.0756
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 0.50155
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J64",
+      "type": "vbw",
+      "centerbin": 444,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 2.0058
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 1.8912
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J65",
+      "type": "vbw",
+      "centerbin": 122,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 1.5275
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 1.7692
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J66",
+      "type": "vbw",
+      "centerbin": 527,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 13,
+        "std": 2.4233
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 1.0994
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J67",
+      "type": "vbw",
+      "centerbin": 446,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 0.14638
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 1.7688
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J68",
+      "type": "vbw",
+      "centerbin": 884,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 2.072
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -1,
+        "std": 1.9387
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J69",
+      "type": "vbw",
+      "centerbin": 1016,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 0.55535
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.26771
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J70",
+      "type": "vbw",
+      "centerbin": 118,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 2.32
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 0.34479
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J71",
+      "type": "vbw",
+      "centerbin": 1011,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 0.97361
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 2.4876
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J72",
+      "type": "vbw",
+      "centerbin": 96,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 0.22232
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.44527
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J73",
+      "type": "vbw",
+      "centerbin": 142,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 1.0807
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 2.7256
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J74",
+      "type": "vbw",
+      "centerbin": 235,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 20,
+        "std": 2.9667
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 2.8793
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J75",
+      "type": "vbw",
+      "centerbin": 671,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 1.1099
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 0.10608
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J76",
+      "type": "vbw",
+      "centerbin": 404,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 1.508
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.6537
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J77",
+      "type": "vbw",
+      "centerbin": 382,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 6,
+        "std": 1.5838
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 0.73719
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J78",
+      "type": "vbw",
+      "centerbin": 686,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 2.8698
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.24833
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J79",
+      "type": "vbw",
+      "centerbin": 149,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 0.98859
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.4113
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J80",
+      "type": "vbw",
+      "centerbin": 516,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 1.0132
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 2.9822
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J81",
+      "type": "vbw",
+      "centerbin": 374,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 1.689
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 2.8739
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J82",
+      "type": "vbw",
+      "centerbin": 282,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 1.5537
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -1,
+        "std": 2.79
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J83",
+      "type": "vbw",
+      "centerbin": 175,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 2.1881
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 1.6479
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J84",
+      "type": "vbw",
+      "centerbin": 804,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.16155
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.2286
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J85",
+      "type": "vbw",
+      "centerbin": 1017,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 1.269
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -10,
+        "std": 1.9522
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J86",
+      "type": "vbw",
+      "centerbin": 610,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.76637
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 0.82829
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J87",
+      "type": "vbw",
+      "centerbin": 89,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 2.1944
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 2.1395
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J88",
+      "type": "vbw",
+      "centerbin": 475,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 2.4397
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 0.67771
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J89",
+      "type": "vbw",
+      "centerbin": 5,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 26,
+        "std": 0.3359
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 0.60186
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J90",
+      "type": "vbw",
+      "centerbin": 1020,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 2.7742
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 1.3156
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J91",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 2.5253
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 1.7534
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J92",
+      "type": "vbw",
+      "centerbin": 438,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 1.8247
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 1.6352
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J93",
+      "type": "vbw",
+      "centerbin": 100,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 24,
+        "std": 0.23009
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 2.7488
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J94",
+      "type": "vbw",
+      "centerbin": 199,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 28,
+        "std": 0.86382
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 1.6489
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J95",
+      "type": "vbw",
+      "centerbin": 419,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 0.42015
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0.68328
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J96",
+      "type": "vbw",
+      "centerbin": 45,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 0.23817
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 0.91826
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J97",
+      "type": "vbw",
+      "centerbin": 79,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 1.7836
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 1.9151
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J98",
+      "type": "vbw",
+      "centerbin": 446,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 27,
+        "std": 0.42338
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 0.69997
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J99",
+      "type": "vbw",
+      "centerbin": 494,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 1.8688
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 0.22442
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J100",
+      "type": "vbw",
+      "centerbin": 75,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 2,
+        "std": 0.53419
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 0.79661
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J101",
+      "type": "vbw",
+      "centerbin": 762,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.9156
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -1,
+        "std": 2.9254
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J102",
+      "type": "vbw",
+      "centerbin": 293,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 15,
+        "std": 1.9484
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 2.768
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J103",
+      "type": "vbw",
+      "centerbin": 443,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 1.153
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0.34497
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J104",
+      "type": "vbw",
+      "centerbin": 73,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 19,
+        "std": 1.9268
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -5,
+        "std": 1.5503
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J105",
+      "type": "vbw",
+      "centerbin": 627,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 0.91352
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 0.65648
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J106",
+      "type": "vbw",
+      "centerbin": 288,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 11,
+        "std": 0.99612
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 2.2917
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J107",
+      "type": "vbw",
+      "centerbin": 725,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 18,
+        "std": 0.56882
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 8,
+        "std": 2.545
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J108",
+      "type": "vbw",
+      "centerbin": 413,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 1.7462
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 1.5053
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J109",
+      "type": "vbw",
+      "centerbin": 736,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 5,
+        "std": 1.0932
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -2,
+        "std": 0.92673
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J110",
+      "type": "vbw",
+      "centerbin": 565,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 9,
+        "std": 0.73393
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 4,
+        "std": 0.71025
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J111",
+      "type": "vbw",
+      "centerbin": 893,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 20,
+        "std": 2.8025
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 2.1062
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J112",
+      "type": "vbw",
+      "centerbin": 3,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 16,
+        "std": 2.7089
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 0.83599
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J113",
+      "type": "vbw",
+      "centerbin": 904,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 17,
+        "std": 0.62288
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -7,
+        "std": 1.8253
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J114",
+      "type": "vbw",
+      "centerbin": 855,
+      "ge_probs": [
+        0.99,
+        1,
+        0,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 29,
+        "std": 2.1835
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -8,
+        "std": 0.70451
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J115",
+      "type": "vbw",
+      "centerbin": 943,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 30,
+        "std": 1.3739
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 0.49386
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J116",
+      "type": "vbw",
+      "centerbin": 201,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 7,
+        "std": 1.5062
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 10,
+        "std": 1.8077
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
+    },
+    {
+      "Name": "J117",
+      "type": "vbw",
+      "centerbin": 333,
+      "ge_probs": [
+        0.99,
+        0.01,
+        0.5,
+        0.5
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 3,
+        "std": 1.8949
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -4,
+        "std": 2.1842
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 0
+      }
     }
-  }
+  ]
 }
