@@ -60,11 +60,10 @@ An RFI scenario is essentially a time,frequency, and amplitude scenario where in
   "spectrogram": {
     "Duration_s": 1,                                         # duration of the scenario to be produced
     "NFreqBins": 1025,                                       # Number of bins in the two-sided FFT
-	"WindowSize_s": 0.001,                                   # Windows duration of each spectrogram entry
-	"NoiseFloorPower_dB": -100,                              # power of the noise floor relative to 0 dB
+    "WindowSize_s": 0.001,                                   # Windows duration of each spectrogram entry
+    "NoiseFloorPower_dB": -100,                              # power of the noise floor relative to 0 dB
     "PathToOutputSpectrogram": "./outputs/spectrogram.csv"   # output file location for the spectrogram
   }
-
 ```
 To produce the spectrogram scenario, call the following in MATLAB.
 ```
@@ -76,18 +75,33 @@ This will produce a spectrogram output file in the `outputs` folder.  The spectr
 Once a spectrogram is ready.  It can be converted to a time domain signal.  This signal is produced using an Inverse FFT process. The following properties are available in the ifft portion of the Jspec.
 ```
   "ifft": {
-    "DurationPerChunk_s": -1,
-    "StartingSampleRate_Hz": 10e6,
-	  "UpsampleRate": 1,
-    "ApplyRandomPhaseOffset": true,
-    "PhaseNoise_rads": 0.1,
-    "PathToOutputTimeSignal": "./outputs/timesignal.csv"
+    "DurationPerChunk_s": -1,                               # duration per time window.  A negative value indicates to used the original window size of the FFT
+    "StartingSampleRate_Hz": 10e6,                          # the desired baseband sample rate
+    "UpsampleRate": 1,                                      # if desired, an upsample rate.  This is usually not requried
+    "ApplyRandomPhaseOffset": true,                         # boolean if a block phase offset should be applied
+    "PhaseNoise_rads": 0.1,                                 # phase noise applied
+    "PathToOutputTimeSignal": "./outputs/timesignal.csv"    # output file location for the time domain signal
   }
 ```
 
-### View resulting files
+To convert the spectrogram to a time domain signal, call the maketimesignal script.  
+```
+maketimesignal
+```
 
-### Playback
+The final time domain signal output file is stored as a text file as complex values, the first column being the real part, and the second column being the imaginary part.  This file can great very large depending on the resulting sample rate to the file.
+
+### View resulting files
+Utilities are provided for viewing the intermediary and final outputs as MATLAB scripts.  The scripts are:
+
++ testshowspectrogram
++ testshowtimesignal
++ testjsondecode
+
+These tools are self-explanatory for the user.
+
+
+
 
 ## The IEEE 3388 Standard
 The IEEE 3388 Standard, titled "Standard for the Performance Assessment of Industrial Wireless Systems," is used to establish a framework for evaluating the performance of wireless networks in industrial and mission-critical settings where reliability and latency are critical. It is protocol-agnostic, meaning it applies to all wireless protocols used in industrial environments, such as manufacturing, power generation, precision sensing, and closed-loop control systems.
