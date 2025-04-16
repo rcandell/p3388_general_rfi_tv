@@ -1,16 +1,39 @@
 classdef rfireactor < rfigen.gereactor
-    %VBWRFIREACTOR Summary of this class goes here
-    %   Detailed explanation goes here
+   % RFIREACTOR Class for modeling radio frequency interference (RFI) reactors
+    %   This class represents an RFI reactor that generates interference patterns
+    %   based on specified bandwidth and power distributions. It is used in the
+    %   context of simulating RFI for wireless communication systems, particularly
+    %   for compliance with the IEEE 3388 standard.
+    %
+    %   Each reactor models the ON/OFF behavior using a Gilbert-Elliot model and
+    %   defines how interference is distributed across frequency bins when ON.
+    %
+    %   Properties:
+    %     name - Name of the reactor
+    %     centerbin - Central frequency bin of the interference
+    %     bw_dist - Structure defining the bandwidth distribution (type, mean, std)
+    %     power_dist - Structure defining the power distribution (type, mean, std)
+    %     power_shaping - Structure for power shaping (enabled, std)
+    %     nbins - Total number of frequency bins
+    %     J - Interference magnitude vector across all bins
+    %
+    %   Methods:
+    %     rfireactor - Constructor
+    %     resetJ - Reset interference vector J to zeros
+    %     add - Add interference to a signal and reset J
+    %     step - Update state and generate interference if ON
+    %     calculate_bin_range - Helper to get valid bin range
+    %
+    % Author: Rick Candell
     
     properties
-        name = [];
-        centerbin = [];
-        bw_dist = [];
-        power_dist = [];
-        power_shaping = [];
-        nbins = []; % num bins total
-
-        J = [];
+        name = [];  % Name of the reactor (not unique)
+        centerbin = [];  % Central frequency bin where interference is centered
+        bw_dist = [];  % Structure containing bandwidth distribution parameters (type, mean, std)
+        power_dist = [];  % Structure containing power distribution parameters (type, mean, std)
+        power_shaping = [];  % Structure for power shaping (enabled, std)
+        nbins = [];  % Total number of frequency bins
+        J = [];  % Interference magnitude vector across all bins, initialized to zeros
     end
     
     methods
@@ -38,6 +61,10 @@ classdef rfireactor < rfigen.gereactor
         end
 
         function obj = step(obj)
+            % STEP Update the reactor state and generate interference magnitude if ON
+            %   This method updates the internal state of the reactor and, if the state is ON,
+            %   calculates the interference magnitude across the frequency bins based on
+            %   the defined distributions and shaping.            
             obj = step@rfigen.gereactor(obj);
             if obj.state == 1
 

@@ -1,9 +1,24 @@
 classdef rfiprops < handle
-    %RFITVCONFIG Summary of this class goes here
-    %   Detailed explanation goes here
-    % Author: Rick Candell
-    % 
-    % (c) Copyright Rick Candell All Rights Reserved    
+    % RFIPROPS Class for handling RFI configuration properties
+    %   This class is responsible for loading and storing configuration properties
+    %   from a JSON file. These properties are used to configure RFI (Radio Frequency
+    %   Interference) generation systems, likely for testing wireless communication
+    %   systems under the IEEE 3388 standard. The class provides a way to load
+    %   configuration data and store it for use in other parts of the system.
+    %
+    %   Properties:
+    %     config - Parsed JSON configuration object (a MATLAB structure)
+    %     path_to_config_file - Path to the JSON configuration file
+    %     ge_probs_bb_rfi - Gilbert-Elliot probabilities for broadband RFI
+    %                       (Note: This property is declared but not initialized here;
+    %                       it may be set elsewhere or extracted from the config.)
+    %
+    %   Methods:
+    %     rfiprops - Constructor to initialize with the configuration file path
+    %     loadConfiguration - Method to load and parse the JSON configuration
+    %
+    %   Author: Rick Candell
+    %   (c) Copyright Rick Candell All Rights Reserved 
     
     properties
 
