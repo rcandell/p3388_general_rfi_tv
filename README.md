@@ -1,5 +1,5 @@
 # RFI Generation (p3388_general_rfi_tv) 
-This project contains MATLAB code that may be used for the generation of generic radio frequency interference (RFI) test vectors at any frequency.  These test vectors would be used to replicate of interference in either a simulation or a laboratory test setting using equipment capable of upconverting a baseband signal to a real center frequency.  This code is not meant to replace commercial test equipment, although it code be beneficial to include the concept of this product in commercial equipment in support of the IEEE 3388 wireless test standard.
+This project provides MATLAB code for generating generic radio frequency interference (RFI) test vectors at any frequency. These vectors enable the simulation or replication of interference in laboratory settings using equipment that upconverts baseband signals to a desired center frequency. While not intended to replace commercial test equipment, the code offers potential for integration into such systems to support the IEEE 3388 wireless test standard.
 
 ## How to use this code
 
