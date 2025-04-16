@@ -39,25 +39,29 @@ classdef rfigenerator < handle
                         reactor_props = obj.rfi_props.config.Reactors(ii);
                     end
                 end
-                newReactor = rfigen.rfireactor(obj.rfi_props.rf_nfreqbins,reactor_props);
+                newReactor = rfigen.rfireactor(obj.rfi_props.config.spectrogram.NFreqBins,reactor_props);
                 obj.rfi_state_reactors{end+1} = newReactor;
             end
 
         end
         
         function make_spectrogram(obj)
-            disp("Sample rate (Hz): " + obj.rfi_props.output_samplerate_hz);
-            disp("Duration (sec): " + obj.rfi_props.output_duration_s);
-            disp("Number of frequency bins: " + obj.rfi_props.rf_nfreqbins);
+            
+            disp("Number of frequency bins: " + obj.rfi_props.config.spectrogram.NFreqBins);
             disp("Number of reactors: " + length(obj.rfi_state_reactors));
             disp("Output file path: " + obj.rfi_props.config.spectrogram.PathToOutputSpectrogram);
 
             t = 0;
-            ts = 1/obj.rfi_props.output_samplerate_hz;
-            dur = obj.rfi_props.output_duration_s;
+            W = obj.rfi_props.config.spectrogram.WindowSize_s;
+            disp("Window size (sec): " + W + " for replication");
+
+            dur = obj.rfi_props.config.spectrogram.Duration_s;
+            disp("Duration (sec): " + dur + " for replication");
+
             N = length(obj.rfi_state_reactors);
-            L = obj.rfi_props.rf_nfreqbins;
-            NF = obj.rfi_props.rel_nf_power_dB;  % relative power in dB
+            L = obj.rfi_props.config.spectrogram.NFreqBins;
+            assert(rem(L,2)) % must be odd number of bins
+            NF = obj.rfi_props.config.spectrogram.NoiseFloorPower_dB;  % relative power in dB
             nfv = power(10,NF/20);  % rel power converted to amplitude
             
             while t < dur
@@ -76,7 +80,7 @@ classdef rfigenerator < handle
 
                 % write time step to csv output file
                 writematrix(J,obj.rfi_props.config.spectrogram.PathToOutputSpectrogram,"WriteMode","append");
-                t = t + ts;
+                t = t + W;
             end
         end
 
@@ -88,7 +92,8 @@ classdef rfigenerator < handle
             fid_in = fopen(ifile_name, "r");
 
             % open the output file
-            fid_out = fopen(ofile_name,'W');
+            % fid_out = fopen(ofile_name,'W');
+            % fmt='%.8f,%.8f\n';
             
             % loop through each set of lines
             tline = fgetl(fid_in);
@@ -106,14 +111,21 @@ classdef rfigenerator < handle
 
                 % write to the output file
                 X = Tchunk.X(:);
-                fprintf(fid_out,"%0.8f%+0.8fi\n", real(X), imag(X));
+                Z = [real(X), imag(X)];
+                writematrix(Z,ofile_name,"WriteMode","append");
+
+                if 0
+                    t = linspace(0, Tchunk.tau, Tchunk.N*Tchunk.U*Tchunk.M); %#ok<UNRCH>
+                    subplot(2,1,1), plot(t, Z(:,1))
+                    subplot(2,1,2), plot(t, Z(:,2))
+                end
                     
                 % last thing, get next line
                 tline = fgetl(fid_in);
                 lineno = lineno + 1;
             end
 
-            fclose(fid_out);
+            % fclose(fid_out);
             fclose(fid_in);
         end
     end

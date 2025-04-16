@@ -7,7 +7,7 @@ close all;
 rfi_config_path = './config/reactors_autogen.json';
 rfi=rfigen.rfigenerator(rfi_config_path);
 
-delete("./outputs/test.csv");
+delete("./outputs/spectrogram.csv");
 rfi.make_spectrogram();
 
 fclose all;

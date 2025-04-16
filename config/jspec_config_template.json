@@ -1,17 +1,18 @@
 {
-	"spectrogram": {
-		"SampleRate_Hz": 1000,
-		"Duration_s": 1.0,
-		"Bandwidth_Hz": 100e6,
-		"NFreqBins": 1024,
-		"NoiseFloorPower_dB": -100,
-		"PathToOutputSpectrogram": "./outputs/test.csv"
-	},
-	
-	"ifft" : {
-		"TimePeriod_tau_s": -1,
-		"Bandwidth_Hz": 100e6,
-		"NPtsIFFT": 4096,
-		"PathToOutputTimeSignal": "./outputs/timesignal.csv"
-	}
+  "spectrogram": {
+    "Duration_s": 1,
+    "NFreqBins": 1025,
+	  "WindowSize_s": 0.001,
+	  "NoiseFloorPower_dB": -100,
+    "PathToOutputSpectrogram": "./outputs/spectrogram.csv"
+  },
+  
+  "ifft": {
+    "DurationPerChunk_s": -1,
+    "StartingSampleRate_Hz": 10e6,
+	  "UpsampleRate": 1,
+    "ApplyRandomPhaseOffset": true,
+    "PhaseNoise_rads": 0.1,
+    "PathToOutputTimeSignal": "./outputs/timesignal.csv"
+  }
 }
