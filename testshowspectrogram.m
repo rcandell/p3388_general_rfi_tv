@@ -21,7 +21,7 @@ outputfile = "./outputs/spectrogram.csv";
 J=readmatrix(outputfile);
 figure, imagesc(X,Y,J);
 ylabel('Time (s)')
-xlabel('Freq (Hz)')
+xlabel('Freq Bin')
 title('Sample test vector of powers vs time and frequecy')
 colorbar
 set(gca,'YDir','normal')

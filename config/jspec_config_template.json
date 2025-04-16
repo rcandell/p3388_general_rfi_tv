@@ -9,7 +9,7 @@
   
   "ifft": {
     "DurationPerChunk_s": -1,
-    "StartingSampleRate_Hz": 10e6,
+    "StartingSampleRate_Hz": 2e6,
 	  "UpsampleRate": 1,
     "ApplyRandomPhaseOffset": true,
     "PhaseNoise_rads": 0.1,

@@ -1,5 +1,5 @@
 
-clear all;
+clear;
 fclose all;
 close all;
 
