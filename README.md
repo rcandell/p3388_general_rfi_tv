@@ -31,23 +31,25 @@ makejspec
 ```
 
 ### Creating a Spectrogram Reactor Specification
-A Jspec reactor specification file is a spreadsheet with the following information.  Each reactor is specified as a row with the columns specifying the properties of each.  The properties for a Jspec reactor are as follows:
+A Jspec reactor specification file is a spreadsheet with the following information.  Each reactor is specified as a row with the columns specifying the properties of each.
 
-+ Name
-+ type
-+ centerbin
-+ ge_prob_11
-+ ge_prob_12
-+ ge_prob_21
-+ ge_prob_22
-+ bw_distr_type
-+ bw_distr_mean
-+ bw_distr_std
-+ pwr_distr_type
-+ pwr_distr_mean
-+ pwr_distr_std
-+ pwr_shaping
-+ pwr_shaping_std
+The properties for a Jspec reactor are as follows:
+
++ **Name** A name for the reactor.  This does not need to be unique.
++ **type** Unused at this time
++ **centerbin** The centroid frequency bin this reactor.  The centerbin should be viewed as a bin in a two-side FFT.
++ **ge_prob_11** Gilbert Elliot transition probability from OFF to OFF
++ **ge_prob_12** Gilbert Elliot transition probability from OFF to ON
++ **ge_prob_21** Gilbert Elliot transition probability from ON to OFF
++ **ge_prob_22** Gilbert Elliot transition probability from ON to ON
++ **bw_distr_type** Determines the number of bins occupied at each reactor iteration. May be "normal" or "flat".  
++ **bw_distr_mean** Average number of bins occupied relative to center bin.
++ **bw_distr_std** Standard deviation of bins occupied relative to center bin.
++ **pwr_distr_type** Distribution of interference power.  Only normal is supported at this time.
++ **pwr_distr_mean** Average interference power
++ **pwr_distr_std** Standard deviation
++ **pwr_shaping** Boolean 0/1 if power is shaped normal across frequency
++ **pwr_shaping_std** If pwr_shaping is 1, the standard deviation of normal power distribution across frequency
 
 
 ### Converting the Spectrogram to a Time Signal
