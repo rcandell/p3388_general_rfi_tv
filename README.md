@@ -85,13 +85,25 @@ Key spectrogram parameters include:
 
 ```json
 "spectrogram": {
-  "Duration_s": 1,                                         # duration of the scenario to be produced
-  "NFreqBins": 1025,                                       # Number of bins in the two-sided FFT
-  "WindowSize_s": 0.001,                                   # Windows duration of each spectrogram entry
-  "NoiseFloorPower_dB": -100,                              # power of the noise floor relative to 0 dB
-  "PathToOutputSpectrogram": "./outputs/spectrogram.csv"   # output file location for the spectrogram
+  "Duration_s": 1,                                         
+  "NFreqBins": 1025,                                       
+  "WindowSize_s": 0.001,                                   
+  "NoiseFloorPower_dB": -100,                              
+  "PathToOutputSpectrogram": "./outputs/spectrogram.csv"   
 }
 ```
+
+where the parameters in the JSON snippet are defined as follows:
+
+| Parameter           | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| **Duration_s**            | duration in seconds of the scenario to be produced                    |
+| **NFreqBins**            | Number of bins in the two-sided FFT                                    |
+| **WindowSize_s**       | Windows duration in seconds of each spectrogram entry                    |
+| **NoiseFloorPower_dB**      | power of the noise floor relative to 0 dB                           |
+| **PathToOutputSpectrogram**      | output file location for the spectrogram                       |
+
+
 
 To generate the spectrogram scenario, run the following MATLAB command:
 
