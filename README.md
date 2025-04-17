@@ -23,7 +23,7 @@ The code follows a straightforward process to generate RFI test vectors. It star
 graph TD;
     JSTEMP[JSPEC Template] --> MKJSPEC([makejspec]);
     REACSPEC[Reactor Specs] --> MKJSPEC;
-    MKJSPEC --> JSPECFILE[reactors_autogen.json];
+    MKJSPEC --> JSPECFILE[JSPEC File reactors_autogen.json];
     JSPECFILE --> MKSPGM([makespectrogram]);
     MKSPGM --> SPGMFILE[Spectrogram File];
     SPGMFILE --> MKTS([maketimesignal]);
