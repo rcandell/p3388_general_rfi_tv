@@ -1,6 +1,6 @@
 {
   "spectrogram": {
-    "Duration_s": 1,
+    "Duration_s": 1.0,
     "NFreqBins": 1025,
 	  "WindowSize_s": 0.001,
 	  "NoiseFloorPower_dB": -100,
@@ -9,7 +9,7 @@
   
   "ifft": {
     "DurationPerChunk_s": -1,
-    "StartingSampleRate_Hz": 2e6,
+    "StartingSampleRate_Hz": 10e6,
 	  "UpsampleRate": 1,
     "ApplyRandomPhaseOffset": true,
     "PhaseNoise_rads": 0.1,
