@@ -119,14 +119,26 @@ The spectrogram can be converted to a time-domain signal using an Inverse FFT (I
 
 ```json
 "ifft": {
-  "DurationPerChunk_s": -1,                               # duration per time window. A negative value indicates using the original window size of the FFT
-  "StartingSampleRate_Hz": 10e6,                          # the desired baseband sample rate
-  "UpsampleRate": 1,                                      # if desired, an upsample rate. This is usually not required
-  "ApplyRandomPhaseOffset": true,                         # boolean if a block phase offset should be applied
-  "PhaseNoise_rads": 0.1,                                 # phase noise applied
-  "PathToOutputTimeSignal": "./outputs/timesignal.csv"    # output file location for the time domain signal
+  "DurationPerChunk_s": -1,                           
+  "StartingSampleRate_Hz": 10e6,                      
+  "UpsampleRate": 1,                                  
+  "ApplyRandomPhaseOffset": true,                     
+  "PhaseNoise_rads": 0.1,                             
+  "PathToOutputTimeSignal": "./outputs/timesignal.csv"
 }
 ```
+
+where the parameters in the JSON snippet are defined as follows:
+
+| Parameter           | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+|  **DurationPerChunk_s**                                | duration per time window. A negative value indicates using the original window size of the FFT |
+|  **StartingSampleRate_Hz**                             | the desired baseband sample rate |
+|  **UpsampleRate**                                      | if desired, an upsample rate. This is usually not required |
+|  **ApplyRandomPhaseOffset**                            | boolean if a block phase offset should be applied |
+|  **PhaseNoise_rads**                                   | phase noise applied |
+|  **PathToOutputTimeSignal**                            | output file location for the time domain signal |
+
 
 To generate the time-domain signal, run:
 
