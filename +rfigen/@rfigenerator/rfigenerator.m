@@ -130,10 +130,6 @@ classdef rfigenerator < handle
 
             % open the input file
             fid_in = fopen(ifile_name, "r");
-
-            % open the output file
-            % fid_out = fopen(ofile_name,'W');
-            % fmt='%.8f,%.8f\n';
             
             % loop through each set of lines
             tline = fgetl(fid_in);
@@ -144,7 +140,7 @@ classdef rfigenerator < handle
                 v_dB = str2num(tline); %#ok<ST2NM>
 
                 % construct time chunk object
-                Tchunk = rfigen.rfitimechunk(obj.rfi_props);
+                Tchunk = rfigen.iffttimechunk(obj.rfi_props);
 
                 % convert to time series using ifft
                 Tchunk = Tchunk + v_dB;
@@ -165,7 +161,6 @@ classdef rfigenerator < handle
                 lineno = lineno + 1;
             end
 
-            % fclose(fid_out);
             fclose(fid_in);
         end
     end

@@ -3,15 +3,23 @@
     "Duration_s": 1,
     "NFreqBins": 1025,
     "WindowSize_s": 0.001,
-    "NoiseFloorPower_dB": -100,
+    "NoiseFloorPower_dB": -200,
     "PathToOutputSpectrogram": "./outputs/spectrogram.csv"
   },
   "ifft": {
     "DurationPerChunk_s": -1,
     "StartingSampleRate_Hz": 1.0E+7,
     "UpsampleRate": 1,
-    "ApplyRandomPhaseOffset": true,
-    "PhaseNoise_rads": 0.1,
+    "ExpansionMethod": "repeat",
+    "Phase": {
+      "Enabled": true,
+      "ApplyRandomPhaseOffset": 0,
+      "PhaseNoise_rads": 0
+    },
+    "Plots": {
+      "InFnREP": 0,
+      "InFnIFFT": 0
+    },
     "PathToOutputTimeSignal": "./outputs/timesignal.csv"
   },
   "Reactors": [
@@ -57,7 +65,7 @@
       },
       "pwr_distr": {
         "type": "normal",
-        "mean": 3,
+        "mean": -3,
         "std": 0
       },
       "pwr_shaping": {
@@ -82,7 +90,7 @@
       },
       "pwr_distr": {
         "type": "normal",
-        "mean": 6,
+        "mean": -6,
         "std": 0
       },
       "pwr_shaping": {
@@ -107,7 +115,7 @@
       },
       "pwr_distr": {
         "type": "normal",
-        "mean": 9,
+        "mean": -9,
         "std": 0
       },
       "pwr_shaping": {
@@ -132,7 +140,7 @@
       },
       "pwr_distr": {
         "type": "normal",
-        "mean": 12,
+        "mean": -12,
         "std": 0
       },
       "pwr_shaping": {

@@ -2,8 +2,8 @@
   "spectrogram": {
     "Duration_s": 1.0,
     "NFreqBins": 1025,
-	  "WindowSize_s": 0.001,
-	  "NoiseFloorPower_dB": -100,
+	"WindowSize_s": 0.001,
+	"NoiseFloorPower_dB": -200,
     "PathToOutputSpectrogram": "./outputs/spectrogram.csv"
   },
   
@@ -11,8 +11,15 @@
     "DurationPerChunk_s": -1,
     "StartingSampleRate_Hz": 10e6,
 	  "UpsampleRate": 1,
-    "ApplyRandomPhaseOffset": true,
-    "PhaseNoise_rads": 0.1,
+    "ExpansionMethod": "repeat",
+    "Phase" : {
+        "Enabled": true,
+        "ApplyRandomPhaseOffset": 0,
+        "PhaseNoise_rads": 0.0 },
+    "Plots" : {
+        "InFnREP" : 0,
+        "InFnIFFT" : 0
+    },
     "PathToOutputTimeSignal": "./outputs/timesignal.csv"
   }
 }
