@@ -76,11 +76,16 @@ classdef iffttimechunk < handle
 
             % desired bandwidth of output signal
             obj.fs = ifft_params.StartingSampleRate_Hz;
+            if obj.fs
+                obj.fs = obj.N/obj.tau;
+            end
             rfigen.loginfo("Starting sample rate is " + obj.fs)
 
             % desired time resolution
             obj.dF = obj.fs/obj.N;
+            rfigen.loginfo("Frequency resolution is " + obj.dF)
             obj.dT = 1/obj.dF;
+            rfigen.loginfo("Time resolution is " + obj.dT)
 
             % Number of times to repeat signal
             obj.M = obj.tau/obj.dT;
@@ -126,7 +131,7 @@ classdef iffttimechunk < handle
 
             X0 = obj.X;
 
-            exp_method = lower(obj.rfi_props.config.ifft.ExpansionMethod);
+            exp_method = lower(obj.rfi_props.config.ifft.Expansion.ExpansionMethod);
            
             % expand out fft by repeating
             if exp_method == "repeat"
@@ -145,7 +150,7 @@ classdef iffttimechunk < handle
                 ii = linspace(1, obj.N, round(obj.M*obj.N));
                 Xi = interp1(i0, obj.X, ii);
 
-                if 1
+                if 0
                     subplot(2,1,1), plot(1:obj.N, real(obj.X)), axis tight
                     title("Original")
                     subplot(2,1,2), plot(1:length(Xi), real(Xi)), axis tight
@@ -154,6 +159,7 @@ classdef iffttimechunk < handle
                 obj.X = Xi; 
             elseif exp_method == "upsample"
                 % assuming upsampling in frequency domain
+                obj.X = fftshift(obj.X);
             else
                 error("Unsupported expansion method " + exp_method)
             end
@@ -211,14 +217,15 @@ classdef iffttimechunk < handle
             Y0 = power(10,YdB/20);  % linear
 
             % now upsample if required
-            exp_method = lower(obj.rfi_props.config.ifft.ExpansionMethod);
+            exp_method = lower(obj.rfi_props.config.ifft.Expansion.ExpansionMethod);
             if exp_method == "upsample"
                 % using interpolation mode
+                interpmethod = obj.rfi_props.config.ifft.Expansion.UpsampleInterpolationMethod;
                 i0 = linspace(1, obj.N, obj.N);
                 ii = linspace(1, obj.N, round(obj.M*obj.N));
-                Yi = interp1(i0, Y0, ii, 'nearest');
+                Yi = interp1(i0, Y0, ii, interpmethod);
 
-                if 1
+                if 0
                     subplot(2,1,1), stem(1:obj.N, Y0), axis tight
                     subplot(2,1,2), stem(1:length(Yi), Yi), axis tight
                 end
@@ -232,12 +239,6 @@ classdef iffttimechunk < handle
             Im = ceil(length(Y0)/2);
             Y1 = [Y0(Im)  Y0(Im+1:end) (Y0(1:Im-1))];
 
-            if 0
-                subplot(3,1,1), stem(Y0)            % original spectrogram input
-                subplot(3,1,2), stem(Y1)            % should should fft style arangement
-                subplot(3,1,3), stem(fftshift(Y1))  % should show same as Y0
-            end
-
             if obj.rfi_props.config.ifft.Phase.Enabled == true
                 % Apply a random phase
                 if obj.apply_poffset
@@ -245,8 +246,11 @@ classdef iffttimechunk < handle
                 else
                     poff = 0;
                 end
-                theta_v = obj.pnoisestd*rand(size(Y1))+poff;
-                Y2 = Y1.*exp(1j*theta_v);  
+                ri = rand(size(Y1));
+                theta_v = obj.pnoisestd*ri+poff;
+                theta_v = theta_v - pi/2;
+                phase_shift = exp(1i*theta_v);
+                Y2 = Y1.*phase_shift;  
             else 
                 % for testing turn off phase
                 Y2 = Y1;

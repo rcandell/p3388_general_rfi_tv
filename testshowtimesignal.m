@@ -4,6 +4,7 @@ fclose all;
 close all;
 
 % file info
+%tsfile = "./outputs/timesignal_5carriers_method-upsample.csv";
 tsfile = "./outputs/timesignal.csv";
 
 % jspec configuration
@@ -19,6 +20,7 @@ tsgen = rfigen.iffttimechunk(props);
 Fs = tsgen.fs;
 Ts = 1/Fs;
 L = round(tsgen.tau*Fs);
+% L = config.spectrogram.NFreqBins;
 
 for ii = 0:1025*4
     I = [ii*L+1 1 ii*L+L 2];
