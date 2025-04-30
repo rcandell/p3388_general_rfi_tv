@@ -145,9 +145,9 @@ where the parameters in the JSON snippet are defined as follows:
 |  **StartingSampleRate_Hz** | the desired baseband sample rate |
 |  **UpsampleRate**  | if desired, an upsample rate. This is usually not required |
 |  **Expansion**  |  if bandwidth expansio is used, provides parameters for methods |
-|    **Enabled** | true for ON (1), false (0) for OFF  |
-|    **ExpansionMethod** | options include: "upsample", "repeat", and "interpolation"  |
-|    **UpsampleInterpolationMethod** | For upsampling interpolation, the interpolation method described in interp1 of MATLAB.  |
+|  - **Enabled** | true for ON (1), false (0) for OFF  |
+|  - **ExpansionMethod** | options include: "upsample", "repeat", and "interpolation"  |
+|  - **UpsampleInterpolationMethod** | For upsampling interpolation, the interpolation method described in interp1 of MATLAB.  |
 |  **ApplyRandomPhaseOffset**                            | boolean if a block phase offset should be applied |
 |  **PhaseNoise_rads**                                   | phase noise applied |
 |  **PathToOutputTimeSignal**                            | output file location for the time domain signal |
