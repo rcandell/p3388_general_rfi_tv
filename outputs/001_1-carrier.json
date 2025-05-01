@@ -28,7 +28,7 @@
   "Reactors": {
     "Name": "J1",
     "type": "vbw",
-    "centerbin": 700,
+    "centerbin": 200,
     "ge_probs": [
       0,
       1,
@@ -37,8 +37,8 @@
     ],
     "bw_distr": {
       "type": "normal",
-      "mean": 300,
-      "std": 30
+      "mean": 1,
+      "std": 0
     },
     "pwr_distr": {
       "type": "normal",
@@ -46,8 +46,8 @@
       "std": 0
     },
     "pwr_shaping": {
-      "enabled": 1,
-      "std": 66.6667
+      "enabled": 0,
+      "std": 0
     }
   }
 }

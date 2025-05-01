@@ -2,7 +2,7 @@
   "spectrogram": {
     "Duration_s": 1.0,
     "NFreqBins": 1025,
-	"WindowSize_s": 0.0001,
+	"WindowSize_s": 0.001,
 	"NoiseFloorPower_dB": -200,
     "PathToOutputSpectrogram": "./outputs/spectrogram.csv"
   },
@@ -10,7 +10,7 @@
   "ifft": {
     "DurationPerChunk_s": -1,
     "StartingSampleRate_Hz": 10e6,
-	  "UpsampleRate": 1,
+	"UpsampleRate": 1,
     "Expansion" : {
         "ExpansionMethod": "upsample",
         "UpsampleInterpolationMethod": "makima"},

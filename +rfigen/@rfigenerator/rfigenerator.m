@@ -32,9 +32,6 @@ classdef rfigenerator < handle
         % State reactors
         rfi_state_reactors = {}; % Cell array storing rfireactor objects for interference generation
 
-        % Output file
-        fout = []; % File handle for output (not used; file paths are in rfi_props)
-
     end
 
     properties (Access = private)

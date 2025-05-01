@@ -1,0 +1,155 @@
+{
+  "spectrogram": {
+    "Duration_s": 1,
+    "NFreqBins": 1025,
+    "WindowSize_s": 0.001,
+    "NoiseFloorPower_dB": -200,
+    "PathToOutputSpectrogram": "./outputs/spectrogram.csv"
+  },
+  "ifft": {
+    "DurationPerChunk_s": -1,
+    "StartingSampleRate_Hz": 1.0E+7,
+    "UpsampleRate": 1,
+    "Expansion": {
+      "ExpansionMethod": "upsample",
+      "UpsampleInterpolationMethod": "makima"
+    },
+    "Phase": {
+      "Enabled": true,
+      "ApplyRandomPhaseOffset": 0,
+      "PhaseNoise_rads": 6.28
+    },
+    "Plots": {
+      "InFnREP": 0,
+      "InFnIFFT": 0
+    },
+    "PathToOutputTimeSignal": "./outputs/timesignal.csv"
+  },
+  "Reactors": [
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 200,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": 0,
+        "std": 0
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 30
+      }
+    },
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 400,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -3,
+        "std": 0
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 30
+      }
+    },
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 600,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -6,
+        "std": 0
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 30
+      }
+    },
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 800,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -9,
+        "std": 0
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 30
+      }
+    },
+    {
+      "Name": "J1",
+      "type": "vbw",
+      "centerbin": 1000,
+      "ge_probs": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "bw_distr": {
+        "type": "normal",
+        "mean": 1,
+        "std": 0
+      },
+      "pwr_distr": {
+        "type": "normal",
+        "mean": -12,
+        "std": 0
+      },
+      "pwr_shaping": {
+        "enabled": 0,
+        "std": 30
+      }
+    }
+  ]
+}
