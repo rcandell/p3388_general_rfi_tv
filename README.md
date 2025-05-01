@@ -144,10 +144,11 @@ where the parameters in the JSON snippet are defined as follows:
 |  **DurationPerChunk_s** | duration per time window. A negative value indicates using the original window size of the FFT |
 |  **StartingSampleRate_Hz** | the desired baseband sample rate |
 |  **UpsampleRate**  | if desired, an upsample rate. This is usually not required |
-|  **Expansion**  |  if bandwidth expansio is used, provides parameters for methods |
-|    **Enabled** | true for ON (1), false (0) for OFF  |
-|    **ExpansionMethod** | options include: "upsample", "repeat", and "interpolation"  |
-|    **UpsampleInterpolationMethod** | For upsampling interpolation, the interpolation method described in interp1 of MATLAB.  |
+|  **Expansion**  |  if bandwidth expansio is used, provides parameters for methods.  Expansion only takes effect if the StartingSampleRate_Hz exceeds the implied sample rate of the original spectrogram (FFT)  |
+|  **ExpansionMethod** | options include: "upsample", "repeat", and "interpolation"  |
+|  **UpsampleInterpolationMethod** | For upsampling interpolation, the interpolation method described in interp1 of MATLAB.  |
+|  **Phase**                            | boolean if a block phase offset should be applied |
+|  **Enabled** | true for ON (1), false (0) for OFF  |
 |  **ApplyRandomPhaseOffset**                            | boolean if a block phase offset should be applied |
 |  **PhaseNoise_rads**                                   | phase noise applied |
 |  **PathToOutputTimeSignal**                            | output file location for the time domain signal |
