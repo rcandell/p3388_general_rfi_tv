@@ -1,0 +1,27 @@
+{
+  "spectrogram": {
+    "Duration_s": 10.0,
+    "NFreqBins": 1025,
+	"WindowSize_s": 0.001,
+	"NoiseFloorPower_dB": -200,
+    "PathToOutputSpectrogram": "./outputs_p3388/temp/spectrogram.csv"
+  },
+  
+  "ifft": {
+    "DurationPerChunk_s": -1,
+    "StartingSampleRate_Hz": 10e6,
+	"UpsampleRate": 1,
+    "Expansion" : {
+        "ExpansionMethod": "upsample",
+        "UpsampleInterpolationMethod": "makima"},
+    "Phase" : {
+        "Enabled": true,
+        "ApplyRandomPhaseOffset": 0,
+        "PhaseNoise_rads": 6.28 },
+    "Plots" : {
+        "InFnREP" : 0,
+        "InFnIFFT" : 0
+    },
+    "PathToOutputTimeSignal": "./outputs_p3388/temp/timesignal.csv"
+  }
+}
