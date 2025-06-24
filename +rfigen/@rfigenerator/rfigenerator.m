@@ -111,9 +111,24 @@ classdef rfigenerator < handle
                 J = 20*log10(J);
 
                 % write time step to csv output file
-                writematrix(J,obj.rfi_props.config.spectrogram.PathToOutputSpectrogram,"WriteMode","append");
+                if t>0
+                    writematrix(J,obj.rfi_props.config.spectrogram.PathToOutputSpectrogram,"WriteMode","append");
+                else
+                    writematrix(J,obj.rfi_props.config.spectrogram.PathToOutputSpectrogram);
+                end
                 t = t + W;
             end
+        end
+
+        function show_spectrum(obj, pspec_file)
+            J=readmatrix(pspec_file);
+            X = 1:obj.rfi_props.config.spectrogram.NFreqBins;
+            Y = 0:obj.rfi_props.config.spectrogram.WindowSize_s:obj.rfi_props.config.spectrogram.Duration_s;     
+            figure, imagesc(X,Y,J);
+            ylabel('Time (s)')
+            xlabel('Freq Bin')
+            colorbar
+            set(gca,'YDir','normal')            
         end
 
         function make_time_signal(obj)

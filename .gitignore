@@ -1,5 +1,5 @@
-./outputs
-./outputs_p3388
+./outputs/*
+./outputs_p3388/*
 convertBinary.m
 analyzeBinFiles.m
 .asv

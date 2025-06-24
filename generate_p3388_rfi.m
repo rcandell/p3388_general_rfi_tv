@@ -46,6 +46,16 @@ for ii = 1:length(Tst)
     disp("SPECTROGRAM PATH: " + specg_path)
     
     if SPECTGOP
+        % recalculate all of the formaulas in the specg spec
+        if 1
+        excel = actxserver('Excel.Application');
+        workbook = excel.Workbooks.Open(fullfile(pwd, fft_config_csv_file));
+        excel.Calculate;
+        workbook.Save;
+        workbook.Close;        
+        excel.Quit;   
+        end
+
         % make spectrogram        
         rfi=rfigen.rfigenerator(jspec_path);
         delete(specg_path);
@@ -56,6 +66,11 @@ for ii = 1:length(Tst)
         interim_spectg_path = rfi.rfi_props.config.spectrogram.PathToOutputSpectrogram;
         copyfile(interim_spectg_path, specg_path);
         disp("spectrogram final file copied")
+
+        % show the spectrogram
+        rfi.show_spectrum(interim_spectg_path);   
+        name_s = strrep(name,"_"," ");
+        title("Spectrogram for " + name_s, "interpreter", "none")
     end
 
     % time signal output file path
