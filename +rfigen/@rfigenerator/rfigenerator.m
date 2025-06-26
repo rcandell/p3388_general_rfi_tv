@@ -121,6 +121,9 @@ classdef rfigenerator < handle
         end
 
         function show_spectrum(obj, pspec_file)
+            % SHOW_SPECTRUM Show the generated spectrogram
+            %   This method plots the spectrogram of the time/frequency 
+            % specification produced by calling make_spectrogram().
             J=readmatrix(pspec_file);
             X = 1:obj.rfi_props.config.spectrogram.NFreqBins;
             Y = 0:obj.rfi_props.config.spectrogram.WindowSize_s:obj.rfi_props.config.spectrogram.Duration_s;     
